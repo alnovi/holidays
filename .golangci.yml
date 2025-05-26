@@ -1,0 +1,55 @@
+version: "2"
+linters:
+  default: none
+  enable:
+    - bodyclose
+    - copyloopvar
+    - cyclop
+    - errcheck
+    - errname
+    - goconst
+    - gocyclo
+    - gosec
+    - ineffassign
+    - mnd
+    - nilerr
+    - nilnil
+    - sqlclosecheck
+    - unconvert
+    - unused
+    - whitespace
+  settings:
+    cyclop:
+      max-complexity: 30
+      package-average: 15
+    gosec:
+      excludes:
+        - G505
+        - G401
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+  settings:
+    gci:
+      sections:
+        - standard
+        - default
+        - prefix(github.com/alnovi/sso)
+      custom-order: true
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
