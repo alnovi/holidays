@@ -45,7 +45,7 @@ formatters:
       sections:
         - standard
         - default
-        - prefix(github.com/alnovi/sso)
+        - prefix(github.com/alnovi/holidays)
       custom-order: true
   exclusions:
     generated: lax
